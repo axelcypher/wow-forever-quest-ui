@@ -1,0 +1,4 @@
+# Heruntergeladene Rohdaten des Build-Skripts
+tools/.cache/
+__pycache__/
+.release/
