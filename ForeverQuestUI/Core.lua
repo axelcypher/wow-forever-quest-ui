@@ -94,6 +94,7 @@ ns.DEFAULTS = {
     position = nil,
     collapsed = { quests = {}, rewards = {} },
     titles = {},
+    minimap = { hide = false },  -- Minimap-Symbol, Format von LibDBIcon (UI/MinimapIcon.lua)
 }
 
 -- Diese Filter setzt "Zurücksetzen" im Filter-Menü zurück.
@@ -153,6 +154,8 @@ eventFrame:SetScript("OnEvent", function(_, event, arg1, arg2)
         end
     elseif event == "PLAYER_LOGIN" then
         if ns.MapPins then ns.MapPins:Init() end
+        -- Erst jetzt: Libs, die andere Addons mitbringen, sind dann sicher geladen.
+        if ns.MinimapIcon then ns.MinimapIcon:Init() end
     elseif event == "PLAYER_LEVEL_UP" then
         -- UnitLevel ist direkt nach dem Ereignis manchmal noch alt.
         C_Timer.After(0.5, ns.OnPlayerStateChanged)
@@ -204,6 +207,8 @@ SlashCmdList.FOREVERQUESTUI = function(msg)
         ns.db.position = nil
         if ns.UI then ns.UI:ResetPosition() end
         ns.Print(L.POSITION_RESET)
+    elseif cmd == "minimap" then
+        if ns.MinimapIcon then ns.MinimapIcon:ToggleFromSlash() end
     elseif cmd == "help" or cmd == "?" then
         ns.Print(L.SLASH_HELP)
     else

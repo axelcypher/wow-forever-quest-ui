@@ -1,0 +1,32 @@
+package-as: ForeverQuestUI
+
+# Bibliotheken für das Minimap-Symbol werden beim Paketieren geholt, nicht ins Repo eingecheckt.
+# Lokal holt sie tools/fetch-libs.ps1 (bzw. .sh); bei Änderungen beide Skripte mit anpassen.
+# Fehlen sie, läuft das Addon trotzdem, nur ohne Minimap-Symbol.
+externals:
+  ForeverQuestUI/Libs/LibStub:
+    url: https://github.com/WoWUIDev/Ace3
+    tag: latest
+    path: LibStub
+  ForeverQuestUI/Libs/CallbackHandler-1.0:
+    url: https://github.com/WoWUIDev/Ace3
+    tag: latest
+    path: CallbackHandler-1.0
+  ForeverQuestUI/Libs/LibDataBroker-1.1:
+    url: https://github.com/tekkub/libdatabroker-1-1
+    tag: latest
+  # LibDBIcon hat kein offizielles Git-Repo, nur das WowAce-SVN (so binden es auch BugSack,
+  # BigWigs und SexyMap ein). Der Packager braucht dafür svn.
+  ForeverQuestUI/Libs/LibDBIcon-1.0: https://repos.wowace.com/wow/libdbicon-1-0/trunk/LibDBIcon-1.0
+
+# Oberfläche und Daten-Addon landen als eigene Ordner in einer gemeinsamen Zip.
+move-folders:
+  ForeverQuestUI/ForeverQuestUI: ForeverQuestUI
+  ForeverQuestUI/ForeverQuestUI_Data: ForeverQuestUI_Data
+
+ignore:
+  - .github
+  - .gitignore
+  - docs
+  - tools
+  - README.md

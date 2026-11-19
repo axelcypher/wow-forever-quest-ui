@@ -7,8 +7,18 @@ local L = ns.L
 L.TITLE = "Questatlas"
 L.BINDING_TOGGLE = "Questatlas ein-/ausblenden"
 L.COMPARTMENT_HINT = "Klicken, um den Questatlas zu öffnen."
-L.SLASH_HELP = "/qa – Fenster ein/aus, /qa debug – Diagnose, /qa reset – Fensterposition zurücksetzen"
+L.SLASH_HELP = "/qa – Fenster ein/aus, /qa minimap – Minimap-Symbol ein/aus, /qa debug – Diagnose, /qa reset – Fensterposition zurücksetzen"
 L.POSITION_RESET = "Fensterposition zurückgesetzt."
+
+-- Minimap-Symbol
+L.MINIMAP_TOOLTIP_COUNT = "%d Quests · %s"
+L.MINIMAP_HINT_LEFT = "Linksklick: Fenster ein-/ausblenden"
+L.MINIMAP_HINT_RIGHT = "Rechtsklick: Menü"
+L.MINIMAP_OPEN = "Questatlas öffnen"
+L.MINIMAP_HIDE = "Minimap-Symbol ausblenden"
+L.MINIMAP_SHOWN = "Minimap-Symbol eingeblendet."
+L.MINIMAP_HIDDEN = "Minimap-Symbol ausgeblendet. /qa minimap blendet es wieder ein."
+L.MINIMAP_UNAVAILABLE = "Minimap-Symbol nicht verfügbar (LibDBIcon-1.0 fehlt, tools/fetch-libs.ps1 ausführen)."
 
 -- Reiter, Fußzeile
 L.TAB_QUESTS = "Quests"
@@ -39,6 +49,8 @@ L.MENU_QUESTS = "Quests"
 L.MENU_REWARDS = "Belohnungen"
 L.MENU_GROUPING = "Gruppierung"
 L.MENU_PINS = "Kartenmarker"
+L.MENU_DISPLAY = "Anzeige"
+L.MENU_MINIMAP_ICON = "Minimap-Symbol"
 L.F_ITEMS_ONLY = "Nur Quests mit Gegenständen"
 L.F_USABLE_ONLY = "Nur für mich nutzbare Gegenstände"
 L.F_HIDE_UNAVAILABLE = "Nicht verfügbare ausblenden (Klasse, Rasse, Fraktion)"

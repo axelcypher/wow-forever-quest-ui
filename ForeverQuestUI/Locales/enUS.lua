@@ -7,8 +7,18 @@ ns.L = L
 L.TITLE = "Quest Atlas"
 L.BINDING_TOGGLE = "Toggle Quest Atlas"
 L.COMPARTMENT_HINT = "Click to open the Quest Atlas."
-L.SLASH_HELP = "/qa – toggle window, /qa debug – diagnostics, /qa reset – reset window position"
+L.SLASH_HELP = "/qa – toggle window, /qa minimap – toggle minimap icon, /qa debug – diagnostics, /qa reset – reset window position"
 L.POSITION_RESET = "Window position reset."
+
+-- Minimap icon
+L.MINIMAP_TOOLTIP_COUNT = "%d quests · %s"
+L.MINIMAP_HINT_LEFT = "Left-click: show/hide window"
+L.MINIMAP_HINT_RIGHT = "Right-click: menu"
+L.MINIMAP_OPEN = "Open Quest Atlas"
+L.MINIMAP_HIDE = "Hide minimap icon"
+L.MINIMAP_SHOWN = "Minimap icon shown."
+L.MINIMAP_HIDDEN = "Minimap icon hidden. /qa minimap shows it again."
+L.MINIMAP_UNAVAILABLE = "Minimap icon not available (LibDBIcon-1.0 missing, run tools/fetch-libs.ps1)."
 
 -- Tabs, footer
 L.TAB_QUESTS = "Quests"
@@ -39,6 +49,8 @@ L.MENU_QUESTS = "Quests"
 L.MENU_REWARDS = "Rewards"
 L.MENU_GROUPING = "Grouping"
 L.MENU_PINS = "Map markers"
+L.MENU_DISPLAY = "Display"
+L.MENU_MINIMAP_ICON = "Minimap icon"
 L.F_ITEMS_ONLY = "Only quests with items"
 L.F_USABLE_ONLY = "Only items usable by me"
 L.F_HIDE_UNAVAILABLE = "Hide unavailable (class, race, faction)"

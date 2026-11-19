@@ -20,9 +20,13 @@ Startort. So merkst du, wenn dir ein gutes Item entgeht, weil die Quest auf der 
   Ein Rechtsklick setzt einen Wegpunkt.
 - **Filter in einer Zeile**: Suche (Quest-, NPC- und Itemnamen), Zone, Schwierigkeitsfarben und ein kompaktes
   Filtermenü (nur mit Items, nur nutzbare Items, Erledigte, Gesperrte, Saison-Quests …).
+- **Minimap-Symbol** mit dem Questbuch: Linksklick blendet das Fenster ein und aus, Rechtsklick öffnet ein kleines
+  Menü, der Tooltip zeigt Trefferzahl und Stufenspanne. Es ist standardmäßig sichtbar und lässt sich über
+  `/qa minimap`, das Rechtsklick-Menü oder „Filter ▾ → Anzeige → Minimap-Symbol“ aus- und wieder einblenden.
+  Sammel-Addons wie SexyMap oder MinimapButtonButton erfassen es (LibDBIcon).
 
-Befehle: `/qa` bzw. `/questatlas` öffnen das Fenster, `/qa debug` gibt eine Diagnose aus. Außerdem gibt es einen
-Eintrag im Addon-Compartment und eine Tastenbelegung unter „AddOns“.
+Befehle: `/qa` bzw. `/questatlas` öffnen das Fenster, `/qa minimap` schaltet das Minimap-Symbol um, `/qa debug`
+gibt eine Diagnose aus. Außerdem gibt es einen Eintrag im Addon-Compartment und eine Tastenbelegung unter „AddOns“.
 
 ## Aufbau
 
@@ -32,15 +36,20 @@ Eintrag im Addon-Compartment und eine Tastenbelegung unter „AddOns“.
 | `ForeverQuestUI_Data/` | Reines Daten-Addon (`LoadOnDemand`). Wird beim ersten Öffnen geladen und lässt sich getrennt aktualisieren |
 | `tools/build_data.py` | Erzeugt das Daten-Addon aus den Quellen unten (nur Python-Standardbibliothek) |
 | `tools/link-addons.ps1` | Verlinkt beide Addons per Junction in den AddOns-Ordner |
+| `tools/fetch-libs.ps1` | Holt die Bibliotheken für das Minimap-Symbol nach `ForeverQuestUI/Libs/` (auch als `.sh`) |
 | `docs/` | [UI-Konzept](docs/UI_DESIGN.md), [Datenvertrag](docs/DATA_CONTRACT.md), [Daten und Aktualisierung](docs/DATA.md) |
 
 ## Installation
 
 Kopiere beide Ordner `ForeverQuestUI` und `ForeverQuestUI_Data` nach `World of Warcraft\_forever_\Interface\AddOns\`.
 
-Für die Entwicklung verlinkst du sie stattdessen. Danach reicht im Spiel ein `/reload`:
+Für die Entwicklung verlinkst du sie stattdessen. Die Bibliotheken für das Minimap-Symbol (LibStub,
+CallbackHandler-1.0, LibDataBroker-1.1, LibDBIcon-1.0) sind nicht eingecheckt: Release-Pakete bringen sie über
+`.pkgmeta` mit, nach dem Klonen holst du sie einmal mit `tools/fetch-libs.ps1`. Ohne sie läuft das Addon, nur ohne
+Minimap-Symbol. Danach reicht im Spiel ein `/reload`:
 
 ```powershell
+.\tools\fetch-libs.ps1
 .\tools\link-addons.ps1 -AddOnsPath "<WoW-Ordner>\_forever_\Interface\AddOns"
 ```
 

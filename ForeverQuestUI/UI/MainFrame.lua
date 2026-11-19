@@ -173,6 +173,18 @@ local function FilterMenu(_, root)
     Radio(root, "pins", "selected", L.PINS_SELECTED)
     Radio(root, "pins", "all", L.PINS_ALL_FILTERED)
 
+    -- Anzeige: kein Filter, deshalb nicht in MENU_FILTER_KEYS und vom Zurücksetzen ausgenommen.
+    -- Nur sichtbar, wenn das Minimap-Symbol verfügbar ist (Bibliotheken vorhanden).
+    local icon = ns.MinimapIcon
+    if icon and icon:IsAvailable() then
+        root:CreateDivider()
+        root:CreateTitle(L.MENU_DISPLAY)
+        root:CreateCheckbox(L.MENU_MINIMAP_ICON, function() return icon:IsShown() end, function()
+            icon:Toggle()
+            return MenuResponse.Refresh
+        end)
+    end
+
     root:CreateDivider()
     root:CreateButton(L.F_RESET, function()
         ns.Filter:Reset()

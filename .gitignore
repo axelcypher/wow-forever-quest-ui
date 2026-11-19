@@ -2,3 +2,6 @@
 tools/.cache/
 __pycache__/
 .release/
+
+# Bibliotheken kommen über .pkgmeta (Release) bzw. tools/fetch-libs.ps1 (lokal)
+ForeverQuestUI/Libs/

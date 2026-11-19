@@ -13,6 +13,8 @@
 ## AddonCompartmentFuncOnEnter: ForeverQuestUI_OnAddonCompartmentEnter
 ## AddonCompartmentFuncOnLeave: ForeverQuestUI_OnAddonCompartmentLeave
 
+embeds.xml
+
 Locales\enUS.lua
 Locales\deDE.lua
 
@@ -29,6 +31,7 @@ UI\RewardList.lua
 UI\Templates.xml
 UI\Detail.lua
 UI\MainFrame.lua
+UI\MinimapIcon.lua
 
 Map\MapPins.lua
 Map\MapPins.xml
