@@ -1,0 +1,34 @@
+## Interface: 16001
+## Title: Forever Quest UI
+## Title-deDE: Forever Quest UI
+## Notes: Questatlas: alle Quests in deiner Stufenspanne mit Belohnungen, Voraussetzungen, Questkette und Kartenmarkern.
+## Notes-deDE: Questatlas: alle Quests in deiner Stufenspanne mit Belohnungen, Voraussetzungen, Questkette und Kartenmarkern.
+## Author: Tobias Pendzialek
+## Version: 0.1.0
+## X-License: GPL-3.0
+## IconTexture: Interface\QuestFrame\UI-QuestLog-BookIcon
+## SavedVariables: ForeverQuestUIDB
+## OptionalDeps: ForeverQuestUI_Data
+## AddonCompartmentFunc: ForeverQuestUI_OnAddonCompartmentClick
+## AddonCompartmentFuncOnEnter: ForeverQuestUI_OnAddonCompartmentEnter
+## AddonCompartmentFuncOnLeave: ForeverQuestUI_OnAddonCompartmentLeave
+
+Locales\enUS.lua
+Locales\deDE.lua
+
+Core.lua
+Data.lua
+Requirements.lua
+Chain.lua
+Items.lua
+Filter.lua
+
+UI\ListKit.lua
+UI\List.lua
+UI\RewardList.lua
+UI\Templates.xml
+UI\Detail.lua
+UI\MainFrame.lua
+
+Map\MapPins.lua
+Map\MapPins.xml

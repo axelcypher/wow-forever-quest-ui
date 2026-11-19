@@ -1,0 +1,5 @@
+<Bindings>
+	<Binding name="FOREVERQUESTUI_TOGGLE" header="FOREVERQUESTUI" category="ADDONS">
+		ForeverQuestUI_Toggle()
+	</Binding>
+</Bindings>
