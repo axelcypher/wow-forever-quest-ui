@@ -1,0 +1,13 @@
+## Interface: 16001
+## Title: Forever Quest UI – Daten
+## Notes: Questdaten für Forever Quest UI (Quests, Start-/Abgabeorte, EP und Geld). Wird bei Bedarf geladen.
+## Author: Tobias Pendzialek
+## Version: 1.3.0-20261119.1
+## LoadOnDemand: 1
+## X-License: GPL-3.0
+
+DataInfo.lua
+QuestDB.lua
+QuestOverlay.lua
+Spawns.lua
+Rewards.lua
